@@ -2822,10 +2822,14 @@ extern int printf(const char *, ...);
 # 34 "main.c" 2
 # 48 "main.c"
 uint8_t ADC;
+uint8_t ADC1;
 char valor [];
 char centenas;
 char decenas;
 char unidad;
+char centenas1;
+char decenas1;
+char unidad1;
 
 
 
@@ -2840,7 +2844,7 @@ void main(void) {
     Lcd_Init();
     Lcd_Clear();
     Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("ADC");
+    Lcd_Write_String("ADC   ADC2");
 
 
 
@@ -2854,6 +2858,15 @@ void main(void) {
         _delay((unsigned long)((1)*(4000000/4000.0)));
         PORTCbits.RC2 = 1;
 
+        PORTCbits.RC1 = 0;
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+
+       spiWrite(PORTD);
+       ADC1 = spiRead();
+
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+        PORTCbits.RC1 = 1;
+
         PORTB = ADC;
 
         centenas = (ADC/100);
@@ -2864,6 +2877,15 @@ void main(void) {
         Lcd_Write_Char(centenas + 48);
         Lcd_Write_Char(decenas + 48);
         Lcd_Write_Char(unidad + 48);
+
+        centenas1 = (ADC1/100);
+        decenas1 = (ADC1/10)%10;
+        unidad1 = ADC1%10;
+
+        Lcd_Set_Cursor(2,7);
+        Lcd_Write_Char(centenas1 + 48);
+        Lcd_Write_Char(decenas1 + 48);
+        Lcd_Write_Char(unidad1 + 48);
     }
     return;
 }
@@ -2878,6 +2900,7 @@ void setup(void){
     PORTB = 0;
     PORTD = 0;
     TRISCbits.TRISC2 = 0;
+    TRISCbits.TRISC1 = 0;
     PORTCbits.RC2 = 1;
     OSCCONbits.IRCF = 0b110;
     OSCCONbits.SCS = 1;
