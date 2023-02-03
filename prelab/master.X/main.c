@@ -47,6 +47,9 @@
 
 uint8_t ADC;
 char valor [];
+char centenas;
+char decenas;
+char unidad;
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
@@ -59,7 +62,9 @@ void setup(void);
 void main(void) {
     setup();
     Lcd_Init();
-
+    Lcd_Clear();
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("ADC");
     //*************************************************************************
     // Loop infinito
     //*************************************************************************
@@ -74,13 +79,15 @@ void main(void) {
         PORTCbits.RC2 = 1;       //Slave Deselect 
         
         PORTB = ADC;
-        sprintf(valor, "%u", ADC);
+        //sprintf(valor, "%u", ADC);
+        centenas = (ADC/100);
+        decenas = (ADC/10)%10;
+        unidad = ADC%10;
 
-        Lcd_Clear();
-        Lcd_Set_Cursor(1,1);
-        Lcd_Write_String("ADC");
         Lcd_Set_Cursor(2,1);
-        Lcd_Write_String(valor);
+        Lcd_Write_Char(centenas + 48);
+        Lcd_Write_Char(decenas + 48);
+        Lcd_Write_Char(unidad + 48);
     }
     return;
 }
