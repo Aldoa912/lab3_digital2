@@ -7,7 +7,7 @@ unsigned int ADC_Read(unsigned int channel) {
     ADCON0bits.GO = 1;       // Start the conversion
     while(ADCON0bits.GO);    // Wait for the conversion to complete
     __delay_us(100);
-    return ((ADRESH << 8)+ ADRESL); // Return the result
+    return (ADRESH); // Return the result
    
 }
 
@@ -19,7 +19,7 @@ void setupADC(void){
     ADCON1bits.VCFG1 = 0;       // Ref VSS
     ADCON1bits.VCFG0 = 0;       // Ref VDD
     
-    ADCON1bits.ADFM = 1;        // Justificado hacia derecha
+    ADCON1bits.ADFM = 0;        // Justificado hacia derecha
     ADCON0bits.ADON = 1;        // Habilitamos el ADC
     __delay_us(100);
 }

@@ -53,6 +53,7 @@ void setup(void);
 //*****************************************************************************
 void __interrupt() isr(void){
    if(SSPIF == 1){
+        PORTD = spiRead();
         spiWrite(ADC);
         SSPIF = 0;
     }
@@ -79,7 +80,6 @@ void setup(void){
     ANSEL = 0;
     ANSELH = 0;
     
-    TRISA = 0b00100001;
     TRISB = 0;
     TRISD = 0;
     
@@ -94,6 +94,7 @@ void setup(void){
     PIR1bits.SSPIF = 0;         // Borramos bandera interrupción MSSP
     PIE1bits.SSPIE = 1;         // Habilitamos interrupción MSSP
     TRISAbits.TRISA5 = 1;       // Slave Select
+    TRISAbits.TRISA0 = 1;       // Slave Select
  
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
    

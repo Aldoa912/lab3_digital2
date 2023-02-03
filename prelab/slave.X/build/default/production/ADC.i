@@ -2641,7 +2641,7 @@ unsigned int ADC_Read(unsigned int channel) {
     ADCON0bits.GO = 1;
     while(ADCON0bits.GO);
     _delay((unsigned long)((100)*(4000000/4000000.0)));
-    return ((ADRESH << 8)+ ADRESL);
+    return (ADRESH);
 
 }
 
@@ -2653,7 +2653,7 @@ void setupADC(void){
     ADCON1bits.VCFG1 = 0;
     ADCON1bits.VCFG0 = 0;
 
-    ADCON1bits.ADFM = 1;
+    ADCON1bits.ADFM = 0;
     ADCON0bits.ADON = 1;
     _delay((unsigned long)((100)*(4000000/4000000.0)));
 }

@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"99 C:\Users\aldoa\Desktop\QuintoSemestre\Digital2\lab\lab3_digital2\prelab\master.X\main.c
+"101 C:\Users\aldoa\Desktop\QuintoSemestre\Digital2\lab\lab3_digital2\prelab\master.X\main.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -75,12 +75,14 @@ SPI_ACTIVE_2_IDLE 64
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 "59 C:\Users\aldoa\Desktop\QuintoSemestre\Digital2\lab\lab3_digital2\prelab\master.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"88
+"90
 [v _setup setup `(v  1 e 1 0 ]
 "3 C:\Users\aldoa\Desktop\QuintoSemestre\Digital2\lab\lab3_digital2\prelab\master.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
 "20
 [v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
+"25
+[v _spiWrite spiWrite `(v  1 e 1 0 ]
 "38
 [v _spiRead spiRead `(uc  1 e 1 0 ]
 "229 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
@@ -99,7 +101,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _PORTCbits PORTCbits `VES39  1 e 1 @7 ]
 "353
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S195 . 1 `uc 1 RD0 1 0 :1:0 
+[s S199 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -109,15 +111,15 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 RD7 1 0 :1:7 
 ]
 "370
-[u S204 . 1 `S195 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES204  1 e 1 @8 ]
+[u S208 . 1 `S199 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES208  1 e 1 @8 ]
 "844
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "851
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
 "1479
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S88 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S93 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -127,27 +129,27 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1558
-[u S97 . 1 `S88 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES97  1 e 1 @135 ]
+[u S102 . 1 `S93 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES102  1 e 1 @135 ]
 "1603
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S109 . 1 `uc 1 SCS 1 0 :1:0 
+[s S114 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1883
-[s S115 . 1 `uc 1 . 1 0 :4:0 
+[s S120 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S120 . 1 `S109 1 . 1 0 `S115 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES120  1 e 1 @143 ]
+[u S125 . 1 `S114 1 . 1 0 `S120 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES125  1 e 1 @143 ]
 "2178
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S271 . 1 `uc 1 BF 1 0 :1:0 
+[s S275 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -157,39 +159,39 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2232
-[s S280 . 1 `uc 1 . 1 0 :2:0 
+[s S284 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S285 . 1 `uc 1 . 1 0 :2:0 
+[s S289 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S291 . 1 `uc 1 . 1 0 :2:0 
+[s S295 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S296 . 1 `uc 1 . 1 0 :2:0 
+[s S300 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S301 . 1 `uc 1 . 1 0 :2:0 
+[s S305 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S306 . 1 `uc 1 . 1 0 :2:0 
+[s S310 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S311 . 1 `S271 1 . 1 0 `S280 1 . 1 0 `S285 1 . 1 0 `S291 1 . 1 0 `S296 1 . 1 0 `S301 1 . 1 0 `S306 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES311  1 e 1 @148 ]
+[u S315 . 1 `S275 1 . 1 0 `S284 1 . 1 0 `S289 1 . 1 0 `S295 1 . 1 0 `S300 1 . 1 0 `S305 1 . 1 0 `S310 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES315  1 e 1 @148 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
@@ -210,29 +212,34 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
 "358 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
 [v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
-"49 C:\Users\aldoa\Desktop\QuintoSemestre\Digital2\lab\lab3_digital2\prelab\master.X\main.c
+"48 C:\Users\aldoa\Desktop\QuintoSemestre\Digital2\lab\lab3_digital2\prelab\master.X\main.c
+[v _ADC ADC `uc  1 e 1 0 ]
+"49
 [v _valor valor `[1]uc  1 e 1 0 ]
 "59
 [v _main main `(v  1 e 1 0 ]
 {
-"84
+"86
 } 0
 "505 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
 "545
-[v sprintf@val val `ui  1 a 2 9 ]
+[v sprintf@val val `ui  1 a 2 8 ]
 "512
 [v sprintf@c c `uc  1 a 1 12 ]
 "521
-[v sprintf@prec prec `c  1 a 1 11 ]
+[v sprintf@prec prec `c  1 a 1 10 ]
 "507
-[v sprintf@ap ap `[1]*.4v  1 a 1 8 ]
+[v sprintf@ap ap `[1]*.4v  1 a 1 7 ]
 "525
-[v sprintf@flag flag `uc  1 a 1 7 ]
+[v sprintf@flag flag `uc  1 a 1 6 ]
 "505
-[v sprintf@sp sp `*.39uc  1 p 2 0 ]
-[v sprintf@f f `*.24DCuc  1 p 1 2 ]
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+[v sprintf@f f `*.24DCuc  1 p 1 0 ]
+"550
+[v sprintf@sp sp `*.4uc  1 a 1 11 ]
 "1567
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwmod.c
@@ -257,7 +264,16 @@ SPI_ACTIVE_2_IDLE 64
 [v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "30
 } 0
-"38 C:\Users\aldoa\Desktop\QuintoSemestre\Digital2\lab\lab3_digital2\prelab\master.X\SPI.c
+"25 C:\Users\aldoa\Desktop\QuintoSemestre\Digital2\lab\lab3_digital2\prelab\master.X\SPI.c
+[v _spiWrite spiWrite `(v  1 e 1 0 ]
+{
+[v spiWrite@dat dat `uc  1 a 1 wreg ]
+[v spiWrite@dat dat `uc  1 a 1 wreg ]
+"27
+[v spiWrite@dat dat `uc  1 a 1 0 ]
+"28
+} 0
+"38
 [v _spiRead spiRead `(uc  1 e 1 0 ]
 {
 "42
@@ -267,10 +283,10 @@ SPI_ACTIVE_2_IDLE 64
 {
 "23
 } 0
-"88 C:\Users\aldoa\Desktop\QuintoSemestre\Digital2\lab\lab3_digital2\prelab\master.X\main.c
+"90 C:\Users\aldoa\Desktop\QuintoSemestre\Digital2\lab\lab3_digital2\prelab\master.X\main.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"101
+"103
 } 0
 "3 C:\Users\aldoa\Desktop\QuintoSemestre\Digital2\lab\lab3_digital2\prelab\master.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]

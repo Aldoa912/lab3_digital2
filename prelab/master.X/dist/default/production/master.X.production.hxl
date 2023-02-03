@@ -8,12 +8,12 @@
 
 ### Memory Usage ###
  Intel Hex-file ranges:
-  0h - 49h		(dist/default/production\master.X.production.hex)
-  94Ah - FFFh		(dist/default/production\master.X.production.hex)
+  0h - 47h		(dist/default/production\master.X.production.hex)
+  93Ah - FFFh		(dist/default/production\master.X.production.hex)
   4000h - 4007h		(dist/default/production\master.X.production.hex)
   400Eh - 4011h		(dist/default/production\master.X.production.hex)
  Unused ranges:
-  4Ah - 949h
+  48h - 939h
   1000h - 3FFFh
   4008h - 400Dh
 
@@ -28,9 +28,10 @@
 00000010 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000020 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000030 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000040 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
+00000040 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------
-00000940 | -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1
+00000930 | -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1
+00000940 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000950 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000960 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000970 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

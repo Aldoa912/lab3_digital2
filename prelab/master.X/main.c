@@ -45,7 +45,7 @@
 #define D6 RD6
 #define D7 RD7
 
-unsigned int ADC;
+uint8_t ADC;
 char valor [];
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
@@ -59,6 +59,7 @@ void setup(void);
 void main(void) {
     setup();
     Lcd_Init();
+
     //*************************************************************************
     // Loop infinito
     //*************************************************************************
@@ -66,13 +67,14 @@ void main(void) {
         PORTCbits.RC2 = 0;       //Slave Select
         __delay_ms(1);
        
-        PORTB = spiRead();
+       spiWrite(PORTD);
+       ADC = spiRead();
        
         __delay_ms(1);
         PORTCbits.RC2 = 1;       //Slave Deselect 
-       
-        sprintf(ADC, "%.u", valor);
-
+        
+        PORTB = ADC;
+        sprintf(valor, "%u", ADC);
 
         Lcd_Clear();
         Lcd_Set_Cursor(1,1);

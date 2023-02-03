@@ -2821,7 +2821,7 @@ extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 # 34 "main.c" 2
 # 48 "main.c"
-unsigned int ADC;
+uint8_t ADC;
 char valor [];
 
 
@@ -2838,17 +2838,19 @@ void main(void) {
 
 
 
+
     while(1){
         PORTCbits.RC2 = 0;
         _delay((unsigned long)((1)*(4000000/4000.0)));
 
-        PORTB = spiRead();
+       spiWrite(PORTD);
+       ADC = spiRead();
 
         _delay((unsigned long)((1)*(4000000/4000.0)));
         PORTCbits.RC2 = 1;
 
-        sprintf(ADC, "%.u", valor);
-
+        PORTB = ADC;
+        sprintf(valor, "%u", ADC);
 
         Lcd_Clear();
         Lcd_Set_Cursor(1,1);
