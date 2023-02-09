@@ -2823,6 +2823,8 @@ extern int printf(const char *, ...);
 # 48 "main.c"
 uint8_t ADC;
 uint8_t ADC1;
+uint8_t contador;
+char verificacion;
 char valor [];
 char centenas;
 char decenas;
@@ -2830,6 +2832,9 @@ char unidad;
 char centenas1;
 char decenas1;
 char unidad1;
+char centenas2;
+char decenas2;
+char unidad2;
 
 
 
@@ -2844,7 +2849,7 @@ void main(void) {
     Lcd_Init();
     Lcd_Clear();
     Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("ADC   ADC2");
+    Lcd_Write_String("ADC   ADC2   CONT");
 
 
 
@@ -2858,17 +2863,6 @@ void main(void) {
         _delay((unsigned long)((1)*(4000000/4000.0)));
         PORTCbits.RC2 = 1;
 
-        PORTCbits.RC1 = 0;
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-
-       spiWrite(PORTD);
-       ADC1 = spiRead();
-
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-        PORTCbits.RC1 = 1;
-
-        PORTB = ADC;
-
         centenas = (ADC/100);
         decenas = (ADC/10)%10;
         unidad = ADC%10;
@@ -2878,6 +2872,30 @@ void main(void) {
         Lcd_Write_Char(decenas + 48);
         Lcd_Write_Char(unidad + 48);
 
+
+        PORTCbits.RC1 = 0;
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+
+       spiWrite(PORTD);
+       verificacion = spiRead();
+
+       if (verificacion == 's'){
+           spiWrite(PORTD);
+           ADC1 = spiRead();
+       }
+
+       else if (verificacion == 'n'){
+           spiWrite(PORTD);
+           contador = spiRead();
+       }
+
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+        PORTCbits.RC1 = 1;
+
+        PORTB = ADC;
+
+
+
         centenas1 = (ADC1/100);
         decenas1 = (ADC1/10)%10;
         unidad1 = ADC1%10;
@@ -2886,6 +2904,15 @@ void main(void) {
         Lcd_Write_Char(centenas1 + 48);
         Lcd_Write_Char(decenas1 + 48);
         Lcd_Write_Char(unidad1 + 48);
+
+        centenas2 = (contador/100);
+        decenas2 = (contador/10)%10;
+        unidad2 = contador%10;
+
+        Lcd_Set_Cursor(2,14);
+        Lcd_Write_Char(centenas2 + 48);
+        Lcd_Write_Char(decenas2 + 48);
+        Lcd_Write_Char(unidad2 + 48);
     }
     return;
 }
